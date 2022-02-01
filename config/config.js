@@ -112,6 +112,8 @@ module.exports = {
   disableHistoricSync: false,
   poolMatchFile: rootPath + '/etc/minersPoolStrings.json',
 
+  host: 'localhost',
+
   // Time to refresh the currency rate. In minutes
   currencyRefresh: 10,
   keys: {

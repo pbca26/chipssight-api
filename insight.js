@@ -145,8 +145,9 @@ require('./config/routes')(expressApp);
 
 
 //Start the app by listening on <port>
-server.listen(config.port, function() {
+server.listen(config.port, config.host, function() {
   logger.info('Chipssight server listening on port %d in %s mode', server.address().port, process.env.NODE_ENV);
+  logger.info('Chipssight server listening on', server.address());
 });
 
 //expose app
