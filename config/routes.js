@@ -9,10 +9,13 @@ module.exports = function(app) {
 
   var apiPrefix = config.apiPrefix;
 
+  // CHIPS routes
+  var gamedata = require('../app/controllers/chipsGameData');
+  app.get(apiPrefix + '/games', gamedata.list);
+
   //Block routes
   var blocks = require('../app/controllers/blocks');
   app.get(apiPrefix + '/blocks', blocks.list);
-
 
   app.get(apiPrefix + '/block/:blockHash', blocks.show);
   app.param('blockHash', blocks.block);
